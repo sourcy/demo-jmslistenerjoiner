@@ -1,0 +1,33 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-activemq')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'io.javaslang', name: 'javaslang', version: '2.0.5'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    compile group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
+}
